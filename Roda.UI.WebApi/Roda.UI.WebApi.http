@@ -1,0 +1,6 @@
+@Roda.UI.WebApi_HostAddress = http://localhost:5066
+
+GET {{Roda.UI.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
