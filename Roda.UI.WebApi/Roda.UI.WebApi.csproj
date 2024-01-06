@@ -35,4 +35,8 @@
     <ProjectReference Include="..\Roda.Infrastructure.Persistence\Roda.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Avatars\" />
+  </ItemGroup>
+
 </Project>
