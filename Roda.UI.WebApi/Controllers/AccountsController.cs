@@ -6,17 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Roda.UI.WebApi.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
-public class AccountsController : ControllerBase
+[Route("api/account")]
+public class AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager) : ControllerBase
 {
-    private readonly UserManager<ApplicationUser> _userManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
-
-    public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
-    {
-        _userManager = userManager;
-        _signInManager = signInManager;
-    }
+    private readonly UserManager<ApplicationUser> _userManager = userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager = signInManager;
 
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterModel model)
